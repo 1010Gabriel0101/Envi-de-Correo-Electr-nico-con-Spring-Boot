@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--
+La parte xmlns:th sirve para activar Thymeleaf.
+Le estamos diciendo al archivo que usaremos atributos especiales como:
+th:text, th:each, th:if, etc.
+Sin esto, Thymeleaf no podría reconocer esas instrucciones.
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido</title>
+</head>
+
+<body>
+    <h1 th:text="'¡Hola, ' + ${nombre} + '!'">¡Hola!</h1>
+    <!--
+    th:text es de Thymeleaf y sirve para insertar texto dinámico.
+    -->
+
+    <p>Este es un correo de confirmacion.</p>
+
+    <p>Este seria un codigo de seguridad:
+        <strong th:text="${codigo}">0000</strong>
+    </p>
+    <!--
+
+    th:text="${codigo}" toma el valor de la variable codigo
+    enviada desde Java.
+
+    Por ejemplo, si desde Java mandas 4821,
+    aquí aparecerá: 4821
+
+    El 0000 es solo texto de respaldo.
+    -->
+
+    <br>
+    <p>Prueba de correo EXITOSA.</p>
+</body>
+
+</html>
